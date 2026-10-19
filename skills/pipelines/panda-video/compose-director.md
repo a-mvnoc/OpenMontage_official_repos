@@ -55,7 +55,8 @@ Rules (upstream governance — do NOT break):
    `resolution` from the job canvas (`scene_plan.metadata.aspect_ratio` /
    `options.aspect_ratio`: default `9:16` → `1080x1920`, `16:9` → `1920x1080`, etc.) — do not
    hardcode vertical. Emit **one `panda_render` scene per edit cut** — a subshot scene becomes
-   several consecutive scenes (its speaking clips and its closed-mouth fills, stills included).
+   several consecutive scenes (its customer speaking clips and its fills — narrator and
+   no-mouth panda sign/walk/action beats — stills included).
    Set each `scenes[].duration_s` from its cut's `effective_duration_seconds` (not the
    downloaded clip length), and pass `target_duration_s` plus `duration_tolerance_fraction=0.05`
    from `asset_manifest.metadata.timeline_contract`. Also pass each scene's measured

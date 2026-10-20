@@ -84,6 +84,19 @@ Rules (upstream governance — do NOT break):
    `remotion`/`hyperframes`, call
    `video_compose` with the matching runtime; pass `proposal_packet` if present so the tool's
    swap-detection runs.
+
+   **Remotion + promo overlays:** `video_compose` uses `compose_strategy=underlay_plus_overlays`
+   (auto when video cuts + `remotion_overlays` are present): `panda_render` builds a clean
+   underlay (no bubbles), Remotion renders a transparent overlay track (no `OffthreadVideo`),
+   ffmpeg merges. Do not pass the musl `binaries_directory` on glibc hosts (musl ffmpeg
+   ENOENT) — overlay-only Chrome render works with defaults. **Do not** silently substitute a
+   bubble-only master when Remotion is locked — if underlay+overlays fails, STOP and escalate.
+   Promo look must match brand grammar (flat `#fdc50d` ExtraBlack / black-white discs /
+   quiet `promo_caption`) — not Space Grotesk cyan chrome.
+
+   **FFmpeg emergency path only** (user-approved runtime swap away from Remotion): never map
+   every overlay to green `draw_bubble` checkmarks. Prefer `callout` / neutral accent for promo
+   lines; map labels must pump per destination, not one clipped country string.
 2. **Verify** the output exists and passes ffprobe (duration within ±5% of
    `timeline_contract.target_duration_seconds` — which may be longer or shorter than the original
    brief under dialogue-duration priority — resolution matching the job canvas, has audio). A target-duration

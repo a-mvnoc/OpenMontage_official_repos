@@ -42,14 +42,19 @@ visual_language:
   texture: flat 2D illustration, clean even keyline, matte fills, no CGI gloss
 
 typography:
-  # NOTE: on-screen captions are rendered by montage-svc (CJK-safe). This block only guides
-  # any text baked into GENERATED imagery — keep it minimal.
+  # NOTE: on-screen captions are rendered by montage-svc (CJK-safe) or Remotion promo
+  # overlays. This block only guides text baked into GENERATED imagery — keep it minimal.
   headings:
     font: "TODO — confirm brand font (see memory panda-mobile-brand-assets)"
     weight: 800
   body:
     font: "TODO"
     weight: 400
+  # Kinetic promo captions (Remotion remotion_overlays) — brand grammar:
+  # flat #fdc50d ExtraBlack punch (promo_hero, Montserrat Black), black/white circle badges
+  # (promo_badge), tilted price stickers (promo_price), quiet bottom-center lines
+  # (promo_caption), map_pin as black label + yellow type. No Space Grotesk cyan chrome,
+  # no blue pills, no uniform green checklist bubbles.
 
 motion:
   transitions: [cut, fade]
